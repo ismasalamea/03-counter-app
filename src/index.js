@@ -1,17 +1,21 @@
+//React +18 
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { createRoot } from 'react-dom/client'
+import CounterApp from './CounterApp';
+import './index.css'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+//Referencias al elemento
+const divRoot = document.querySelector('#root');
+const root = createRoot(divRoot);
+root.render(<CounterApp value={0}/>)
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
+
+//Antes de React 18
+//import React from 'react';
+//import CounterApp from './CounterApp';
+//import ReactDOM from 'react-dom'
+//import './index.css'
+//const divRoot = document.querySelector('#root');
+//ReactDOM.render( <CounterApp value={0}/>, divRoot)
+
